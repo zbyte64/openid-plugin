@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.396</version>
+    <version>1.462</version>
   </parent>
 
   <artifactId>openid</artifactId>
@@ -48,6 +48,51 @@
       <version>${jenkins.version}</version>
       <scope>provided</scope>
     </dependency>
+
+<dependency>
+      <groupId>com.octo.captcha</groupId>
+      <artifactId>jcaptcha-all</artifactId>
+      <version>1.0-RC6</version>
+      <exclusions>
+        <exclusion>
+          <groupId>hsqldb</groupId>
+          <artifactId>hsqldb</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>hsqldb</groupId>
+          <artifactId>hsqldb</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sf.ehcache</groupId>
+          <artifactId>ehcache</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>quartz</groupId>
+          <artifactId>quartz</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>xerces</groupId>
+          <artifactId>xercesImpl</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>xerces</groupId>
+          <artifactId>xmlParserAPIs</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-dbcp</groupId>
+          <artifactId>commons-dbcp</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>concurrent</groupId>
+          <artifactId>concurrent</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
     <dependency>
       <groupId>org.jenkins-ci.main</groupId>
       <artifactId>maven-plugin</artifactId>
@@ -69,7 +114,7 @@
   </dependencies>
 
   <properties>
-    <jenkins.version>1.400</jenkins.version>
+    <jenkins.version>1.462</jenkins.version>
   </properties>
 
   <scm>
@@ -82,13 +127,28 @@
       <id>repo.jenkins-ci.org</id>
       <url>http://repo.jenkins-ci.org/public/</url>
     </repository>
+    <repository>
+      <id>org.jenkins-ci.main</id>
+      <url>http://maven.jenkins-ci.org/content/groups/artifacts/org/jenkins-ci/main/</url>
+    </repository>
+    <repository>
+            <id>org.jenkins-ci.plugins</id>
+            <url>http://maven.jenkins-ci.org/content/groups/artifacts/org/jenkins-ci/plugins/</url>
+    </repository>
   </repositories>
 
     <pluginRepositories>
+
         <pluginRepository>
             <id>repo.jenkins-ci.org</id>
             <url>http://repo.jenkins-ci.org/public/</url>
         </pluginRepository>
+
+        <pluginRepository>
+            <id>org.jenkins-ci.plugins</id>
+            <url>http://maven.jenkins-ci.org/content/groups/artifacts/org/jenkins-ci/plugins/</url>
+        </pluginRepository>
+
     </pluginRepositories>
 </project>  
 
